@@ -83,5 +83,5 @@ This will generate a URL that you can share for others to test the app on their 
 
 ## License
 
-This project is licensed under the MIT License. Feel free to use and modify the code as needed.
+This project is licensed under anything. Feel free to use and modify the code as needed.
 
