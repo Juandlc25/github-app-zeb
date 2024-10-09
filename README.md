@@ -48,5 +48,40 @@ Ensure you have the following installed:
 
 4. Run on a simulator or physical device using the **Expo Go** app.
 
-## Project Structure
+## Screens
+
+### User Search
+- Accessible from the **Users** tab. 
+- Enter a username in the search bar to fetch and display GitHub users with their avatar and link to their profile.
+
+### Repository Search
+- Accessible from the **Repositories** tab.
+- Enter a repository name to fetch and display matching repositories with details like the repository name and owner.
+
+## API
+
+This app makes use of the GitHub Search API:
+
+- **User Search**: `https://api.github.com/search/users?q=<query>`
+- **Repository Search**: `https://api.github.com/search/repositories?q=<query>`
+
+## Deployment
+
+To deploy the app via Expo:
+
+1. Log in to your Expo account:
+    ```bash
+    expo login
+    ```
+
+2. Publish the app:
+    ```bash
+    expo publish
+    ```
+
+This will generate a URL that you can share for others to test the app on their devices using **Expo Go**.
+
+## License
+
+This project is licensed under the MIT License. Feel free to use and modify the code as needed.
 
