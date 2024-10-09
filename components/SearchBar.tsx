@@ -13,7 +13,7 @@ export const SearchBar = ({ query, onSearch }: Props) => (
     <TextInput
       value={query}
       onChangeText={onSearch}
-      className="h-10 text-gray-800 placeholder:text-gray-500 bg p-2 rounded"
+      className="h-10 text-gray-800 placeholder:text-gray-500 bg p-2 rounded w-full"
       placeholder="Search..."
       placeholderTextColor={"#6b7280"}
     />

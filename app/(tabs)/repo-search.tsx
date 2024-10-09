@@ -12,7 +12,7 @@ import { RepoCard } from "@/components/RepoCard";
 import { Header } from "@/components/Header";
 
 export default function TabTwoScreen() {
-  const [debouncedValue, query, setQuery] = useDebounce<string>("", 3000);
+  const [debouncedValue, query, setQuery] = useDebounce<string>("", 2000);
 
   const [repos, setRepos] = useState<Repo[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
@@ -20,7 +20,7 @@ export default function TabTwoScreen() {
   const handleSearch = (text: string) => setQuery(text);
 
   const findRepos = async () => {
-    if (debouncedValue.length > 2) {
+    if (debouncedValue.length > 0) {
       setLoading(true);
       const results = await searchRepositories(debouncedValue);
       setRepos(results);
@@ -45,7 +45,7 @@ export default function TabTwoScreen() {
           <EmptyState
             icon={<Icon color={"#6b7280"} name="code-slash" size={48} />}
             subtitle="No results to show"
-            title="Please find a github repository"
+            title="Search for a repository"
           />
         ) : (
           <FlatList

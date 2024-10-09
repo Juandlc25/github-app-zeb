@@ -12,7 +12,7 @@ import EmptyState from "@/components/EmptyState";
 import { Header } from "@/components/Header";
 
 export default function HomeScreen() {
-  const [debouncedValue, query, setQuery] = useDebounce<string>("", 3000);
+  const [debouncedValue, query, setQuery] = useDebounce<string>("", 2000);
 
   const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
@@ -20,7 +20,7 @@ export default function HomeScreen() {
   const handleSearch = (text: string) => setQuery(text);
 
   const findUsers = async () => {
-    if (debouncedValue.length > 2) {
+    if (debouncedValue.length > 0) {
       setLoading(true);
       const results = await searchUsers(debouncedValue);
       setUsers(results);
@@ -45,7 +45,7 @@ export default function HomeScreen() {
           <EmptyState
             icon={<Icon color={"#6b7280"} name="man" size={48} />}
             subtitle="No results to show"
-            title="Please find a github user"
+            title="Search for a user"
           />
         ) : (
           <FlatList
